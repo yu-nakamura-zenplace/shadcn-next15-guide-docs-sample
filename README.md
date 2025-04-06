@@ -2,6 +2,9 @@
 
 このリポジトリは Shadcn UI を学習するための Next.js プロジェクトです。
 
+Vercel Deploy済み：
+https://shadcn-next15-guide-docs-sample.vercel.app
+
 ## ✨ 目的
 
 *   Shadcn UI の基本的な使い方を理解する
