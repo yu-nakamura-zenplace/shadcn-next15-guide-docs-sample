@@ -115,7 +115,7 @@ export default function ShadcnUiSetupPage() {
               <p className="text-sm">
                 <code className="bg-slate-100 dark:bg-slate-800 px-1.5 py-0.5 rounded text-xs">components.json</code> の 
                 <code className="bg-slate-100 dark:bg-slate-800 px-1.5 py-0.5 rounded text-xs">rsc</code> オプションで RSC のサポートを有効にするか選択できます。
-                有効にすると、クライアントコンポーネントに自動的に <code className="bg-slate-100 dark:bg-slate-800 px-1.5 py-0.5 rounded text-xs">'use client'</code> ディレクティブが追加されます。
+                有効にすると、クライアントコンポーネントに自動的に <code className="bg-slate-100 dark:bg-slate-800 px-1.5 py-0.5 rounded text-xs">{`'use client'`}</code> ディレクティブが追加されます。
               </p>
             </CardContent>
           </Card>

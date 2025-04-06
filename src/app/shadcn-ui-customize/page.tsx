@@ -279,9 +279,9 @@ export default function ShadcnUiCustomizePage() {
                 Tailwind CSSが提供する豊富なユーティリティクラスを組み合わせることで、必要なスタイルを効率的に実現できます。
               </p>
               <div className="bg-slate-100 dark:bg-slate-800 p-3 rounded-md text-xs font-mono overflow-x-auto">
-                &lt;button className="bg-blue-600 hover:bg-blue-700 text-white font-medium py-2 px-4 rounded-md transition-colors"&gt;
+                {`<button className="bg-blue-600 hover:bg-blue-700 text-white font-medium py-2 px-4 rounded-md transition-colors">
                   カスタムボタン
-                &lt;/button&gt;
+                </button>`}
               </div>
             </CardContent>
           </Card>
