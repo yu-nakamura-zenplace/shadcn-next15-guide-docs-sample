@@ -5,14 +5,43 @@ import { Card, CardContent } from "@/components/ui/card";
 import { ThemeToggle } from "@/components/theme-toggle";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
+import { 
+  ArrowLeft, 
+  Home, 
+  PaintBucket,
+  Palette, 
+  Code, 
+  Workflow,
+  Sparkles,
+  Brush,
+  Repeat,
+  Accessibility,
+  CodepenIcon,
+  Check
+} from "lucide-react";
+import { Icon } from "@/components/ui/icon";
 
 export default function ShadcnUiTailwindPage() {
   return (
     <main className="container mx-auto py-8 px-4 max-w-4xl">
       <div className="flex justify-between items-center mb-8">
-        <h1 className="text-3xl font-bold">shadcn/ui と Tailwind CSS の連携</h1>
+        <h1 className="text-3xl font-bold flex items-center">
+          <Icon
+            icon={PaintBucket}
+            className="h-7 w-7 mr-2 text-primary"
+            animation="none"
+            label="Tailwind連携"
+          />
+          shadcn/ui と Tailwind CSS の連携
+        </h1>
         <div className="flex items-center gap-4">
-          <Link href="/" className="text-sm font-medium hover:underline">
+          <Link href="/" className="text-sm font-medium hover:underline flex items-center">
+            <Icon
+              icon={Home}
+              className="h-4 w-4 mr-1 text-slate-500"
+              animateOnHover
+              label="ホーム"
+            />
             ← ホームに戻る
           </Link>
           <ThemeToggle />
@@ -30,13 +59,26 @@ export default function ShadcnUiTailwindPage() {
       <section className="mb-10">
         <div className="flex items-center gap-3 mb-4">
           <div className="bg-primary h-8 w-1 rounded-full"></div>
+          <Icon
+            icon={Sparkles}
+            className="h-6 w-6 text-primary"
+            animation="none"
+            label="技術の強み"
+          />
           <h2 className="text-2xl font-semibold">それぞれの技術の強み</h2>
         </div>
         
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
           <Card className="border border-slate-200 dark:border-slate-800 overflow-hidden">
             <div className="bg-slate-100 dark:bg-slate-800 p-3 border-b border-slate-200 dark:border-slate-700">
-              <h3 className="font-medium">shadcn/ui の強み</h3>
+              <h3 className="font-medium flex items-center">
+                <Icon
+                  icon={Code}
+                  className="h-4 w-4 mr-1 text-slate-700 dark:text-slate-300"
+                  label="shadcn/ui"
+                />
+                shadcn/ui の強み
+              </h3>
             </div>
             <CardContent className="pt-4">
               <ul className="list-disc pl-5 space-y-3 text-sm">
@@ -52,7 +94,14 @@ export default function ShadcnUiTailwindPage() {
           
           <Card className="border border-slate-200 dark:border-slate-800 overflow-hidden">
             <div className="bg-slate-100 dark:bg-slate-800 p-3 border-b border-slate-200 dark:border-slate-700">
-              <h3 className="font-medium">Tailwind CSS の強み</h3>
+              <h3 className="font-medium flex items-center">
+                <Icon
+                  icon={Palette}
+                  className="h-4 w-4 mr-1 text-slate-700 dark:text-slate-300"
+                  label="Tailwind CSS"
+                />
+                Tailwind CSS の強み
+              </h3>
             </div>
             <CardContent className="pt-4">
               <ul className="list-disc pl-5 space-y-3 text-sm">
@@ -69,6 +118,12 @@ export default function ShadcnUiTailwindPage() {
       <section className="mb-10">
         <div className="flex items-center gap-3 mb-4">
           <div className="bg-primary h-8 w-1 rounded-full"></div>
+          <Icon
+            icon={Workflow}
+            className="h-6 w-6 text-primary"
+            animation="none"
+            label="連携と恩恵"
+          />
           <h2 className="text-2xl font-semibold">連携による恩恵と開発ワークフロー</h2>
         </div>
         
@@ -78,32 +133,60 @@ export default function ShadcnUiTailwindPage() {
               shadcn/ui と Tailwind CSS を組み合わせることで、以下のような恩恵を受けられます：
             </p>
             <div className="space-y-4">
-              <div className="p-4  rounded-lg">
-                <h3 className="font-medium mb-2">1. 迅速なUI構築</h3>
+              <div className="p-4 rounded-lg">
+                <h3 className="font-medium mb-2 flex items-center">
+                  <Icon
+                    icon={Sparkles}
+                    className="h-4 w-4 mr-1 text-slate-500"
+                    label="UI構築"
+                  />
+                  1. 迅速なUI構築
+                </h3>
                 <p className="text-sm">
                   shadcn/ui が提供する実務品質の UI コンポーネントと、Tailwind CSS のユーティリティクラスを組み合わせることで、<strong>コーディング量を減らし、迅速に UI を構築</strong> できます。
                   shadcn/ui は基本的な UI 要素を網羅しており、Tailwind CSS はそれらのスタイリングを効率的に行えます。
                 </p>
               </div>
               
-              <div className="p-4  rounded-lg">
-                <h3 className="font-medium mb-2">2. 高いカスタマイズ性</h3>
+              <div className="p-4 rounded-lg">
+                <h3 className="font-medium mb-2 flex items-center">
+                  <Icon
+                    icon={Brush}
+                    className="h-4 w-4 mr-1 text-slate-500"
+                    label="カスタマイズ"
+                  />
+                  2. 高いカスタマイズ性
+                </h3>
                 <p className="text-sm">
                   shadcn/ui のコンポーネントは Tailwind CSS をベースにスタイリングされているため、<strong>Tailwind CSS のユーティリティクラスを className プロパティを通じて自由に追加・変更</strong> できます。
                   これにより、プロジェクトのデザイン要件に合わせてコンポーネントの外観を柔軟にカスタマイズできます。
                 </p>
               </div>
               
-              <div className="p-4  rounded-lg">
-                <h3 className="font-medium mb-2">3. デザインの一貫性</h3>
+              <div className="p-4 rounded-lg">
+                <h3 className="font-medium mb-2 flex items-center">
+                  <Icon
+                    icon={Repeat}
+                    className="h-4 w-4 mr-1 text-slate-500"
+                    label="一貫性"
+                  />
+                  3. デザインの一貫性
+                </h3>
                 <p className="text-sm">
                   Tailwind CSS のユーティリティクラスを使用することで、<strong>アプリケーション全体でデザインの一貫性を保ちやすく</strong> なります。
                   shadcn/ui のコンポーネントもこのデザインシステムに沿ってスタイリングできるため、統一感のある UI を容易に実現できます。
                 </p>
               </div>
               
-              <div className="p-4  rounded-lg">
-                <h3 className="font-medium mb-2">4. アクセシビリティの確保</h3>
+              <div className="p-4 rounded-lg">
+                <h3 className="font-medium mb-2 flex items-center">
+                  <Icon
+                    icon={Accessibility}
+                    className="h-4 w-4 mr-1 text-slate-500"
+                    label="アクセシビリティ"
+                  />
+                  4. アクセシビリティの確保
+                </h3>
                 <p className="text-sm">
                   shadcn/ui は Radix UI をベースにしているため、<strong>アクセシビリティ（a11y）が考慮されたコンポーネント</strong> を利用できます。
                   Tailwind CSS を用いたカスタマイズ時にも、ARIA属性などを適切に付与することで、アクセシビリティを維持した開発が可能です。
@@ -117,6 +200,12 @@ export default function ShadcnUiTailwindPage() {
       <section className="mb-10">
         <div className="flex items-center gap-3 mb-4">
           <div className="bg-primary h-8 w-1 rounded-full"></div>
+          <Icon
+            icon={CodepenIcon}
+            className="h-6 w-6 text-primary"
+            animation="none"
+            label="コード例"
+          />
           <h2 className="text-2xl font-semibold">具体的な開発ワークフローとコード例</h2>
         </div>
         
@@ -133,7 +222,14 @@ export default function ShadcnUiTailwindPage() {
             </ol>
             
             <div className="bg-slate-100 dark:bg-slate-800 p-4 rounded-lg">
-              <h3 className="font-medium mb-3">コード例:</h3>
+              <h3 className="font-medium mb-3 flex items-center">
+                <Icon
+                  icon={Code}
+                  className="h-4 w-4 mr-1 text-slate-700 dark:text-slate-300"
+                  label="コード例"
+                />
+                コード例:
+              </h3>
               <div className="bg-slate-200 dark:bg-slate-900 p-4 rounded-md text-xs font-mono overflow-x-auto mb-4 whitespace-pre-wrap">
                 {`"use client";
 import { Button } from "@/components/ui/button";
@@ -183,9 +279,12 @@ export default function Home() {
       
       <div className="flex justify-center mt-10">
         <Link href="/" className="inline-flex items-center gap-2 text-primary hover:underline">
-          <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
-            <path strokeLinecap="round" strokeLinejoin="round" d="M10 19l-7-7m0 0l7-7m-7 7h18" />
-          </svg>
+          <Icon
+            icon={ArrowLeft}
+            className="h-4 w-4"
+            animateOnHover
+            label="戻る"
+          />
           学習ガイドトップへ戻る
         </Link>
       </div>

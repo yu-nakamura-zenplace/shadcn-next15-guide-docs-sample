@@ -4,14 +4,41 @@ import React from "react";
 import { Card, CardContent } from "@/components/ui/card";
 import { ThemeToggle } from "@/components/theme-toggle";
 import Link from "next/link";
+import { 
+  ArrowLeft, 
+  Home, 
+  Gauge, 
+  Server, 
+  Cpu, 
+  Clock, 
+  ImageIcon,
+  Loader2,
+  Package,
+  Check
+} from "lucide-react";
+import { Icon } from "@/components/ui/icon";
 
 export default function ShadcnUiPerformancePage() {
   return (
     <main className="container mx-auto py-8 px-4 max-w-4xl">
       <div className="flex justify-between items-center mb-8">
-        <h1 className="text-3xl font-bold">shadcn/ui を用いたパフォーマンス最適化戦略</h1>
+        <h1 className="text-3xl font-bold flex items-center">
+          <Icon
+            icon={Gauge}
+            className="h-7 w-7 mr-2 text-primary"
+            animation="none"
+            label="パフォーマンス"
+          />
+          shadcn/ui を用いたパフォーマンス最適化戦略
+        </h1>
         <div className="flex items-center gap-4">
-          <Link href="/" className="text-sm font-medium hover:underline">
+          <Link href="/" className="text-sm font-medium hover:underline flex items-center">
+            <Icon
+              icon={Home}
+              className="h-4 w-4 mr-1 text-slate-500"
+              animateOnHover
+              label="ホーム"
+            />
             ← ホームに戻る
           </Link>
           <ThemeToggle />
@@ -29,6 +56,12 @@ export default function ShadcnUiPerformancePage() {
       <section className="mb-10">
         <div className="flex items-center gap-3 mb-4">
           <div className="bg-primary h-8 w-1 rounded-full"></div>
+          <Icon
+            icon={Server}
+            className="h-6 w-6 text-primary"
+            animation="none"
+            label="RSC"
+          />
           <h2 className="text-2xl font-semibold">React Server Components (RSC) の優先</h2>
         </div>
         
@@ -47,6 +80,12 @@ export default function ShadcnUiPerformancePage() {
       <section className="mb-10">
         <div className="flex items-center gap-3 mb-4">
           <div className="bg-primary h-8 w-1 rounded-full"></div>
+          <Icon
+            icon={Cpu}
+            className="h-6 w-6 text-primary"
+            animation="none"
+            label="クライアント最適化"
+          />
           <h2 className="text-2xl font-semibold">クライアントコンポーネントの最適化</h2>
         </div>
         
@@ -61,7 +100,14 @@ export default function ShadcnUiPerformancePage() {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-6">
           <Card className="border border-slate-200 dark:border-slate-800 overflow-hidden">
             <div className="bg-slate-100 dark:bg-slate-800 p-3 border-b border-slate-200 dark:border-slate-700">
-              <h3 className="font-medium">クライアントコンポーネントの最小化</h3>
+              <h3 className="font-medium flex items-center">
+                <Icon
+                  icon={Cpu}
+                  className="h-4 w-4 mr-1 text-slate-700 dark:text-slate-300"
+                  label="最小化"
+                />
+                クライアントコンポーネントの最小化
+              </h3>
             </div>
             <CardContent className="pt-4">
               <p className="text-sm mb-3">
@@ -80,7 +126,14 @@ export function InteractiveComponent() {
           
           <Card className="border border-slate-200 dark:border-slate-800 overflow-hidden">
             <div className="bg-slate-100 dark:bg-slate-800 p-3 border-b border-slate-200 dark:border-slate-700">
-              <h3 className="font-medium">再レンダリングの最適化</h3>
+              <h3 className="font-medium flex items-center">
+                <Icon
+                  icon={Cpu}
+                  className="h-4 w-4 mr-1 text-slate-700 dark:text-slate-300"
+                  label="再レンダリング"
+                />
+                再レンダリングの最適化
+              </h3>
             </div>
             <CardContent className="pt-4">
               <p className="text-sm mb-3">
@@ -99,6 +152,12 @@ export function InteractiveComponent() {
       <section className="mb-10">
         <div className="flex items-center gap-3 mb-4">
           <div className="bg-primary h-8 w-1 rounded-full"></div>
+          <Icon
+            icon={Clock}
+            className="h-6 w-6 text-primary"
+            animation="none"
+            label="遅延読み込み"
+          />
           <h2 className="text-2xl font-semibold">遅延読み込みの活用</h2>
         </div>
         
@@ -121,6 +180,12 @@ const LazyDialog = dynamic(() => import("@/components/ui/dialog"), {
       <section className="mb-10">
         <div className="flex items-center gap-3 mb-4">
           <div className="bg-primary h-8 w-1 rounded-full"></div>
+          <Icon
+            icon={Gauge}
+            className="h-6 w-6 text-primary"
+            animation="none"
+            label="その他の最適化"
+          />
           <h2 className="text-2xl font-semibold">その他の最適化手法</h2>
         </div>
         
@@ -132,7 +197,14 @@ const LazyDialog = dynamic(() => import("@/components/ui/dialog"), {
                   <span className="text-xs">1</span>
                 </div>
                 <div>
-                  <h3 className="font-medium mb-2">画像の最適化</h3>
+                  <h3 className="font-medium mb-2 flex items-center">
+                    <Icon
+                      icon={ImageIcon}
+                      className="h-4 w-4 mr-1 text-slate-500"
+                      label="画像最適化"
+                    />
+                    画像の最適化
+                  </h3>
                   <p className="text-sm">
                     <strong>Next.js の &lt;Image /&gt; コンポーネントを使用し、WebP 形式での提供や遅延読み込みを適用</strong>することで最適化します。
                     画像のサイズ最適化やレスポンシブな画像の提供、viewport に入った画像の遅延読み込みなどを自動的に行ってくれます。
@@ -149,7 +221,14 @@ const LazyDialog = dynamic(() => import("@/components/ui/dialog"), {
                   <span className="text-xs">2</span>
                 </div>
                 <div>
-                  <h3 className="font-medium mb-2">ローディング状態の表示</h3>
+                  <h3 className="font-medium mb-2 flex items-center">
+                    <Icon
+                      icon={Loader2}
+                      className="h-4 w-4 mr-1 text-slate-500"
+                      label="ローディング状態"
+                    />
+                    ローディング状態の表示
+                  </h3>
                   <p className="text-sm">
                     コンポーネントの読み込みに時間がかかる場合、<strong>shadcn/ui の Skeleton コンポーネントなどを活用してローディング状態を視覚的に表示</strong>することで、
                     ユーザー体験を向上させることができます。
@@ -166,7 +245,14 @@ const LazyDialog = dynamic(() => import("@/components/ui/dialog"), {
                   <span className="text-xs">3</span>
                 </div>
                 <div>
-                  <h3 className="font-medium mb-2">不要な依存関係の削減</h3>
+                  <h3 className="font-medium mb-2 flex items-center">
+                    <Icon
+                      icon={Package}
+                      className="h-4 w-4 mr-1 text-slate-500"
+                      label="依存関係"
+                    />
+                    不要な依存関係の削減
+                  </h3>
                   <p className="text-sm">
                     アプリケーションで使用しないライブラリやコンポーネントは削除し、<strong>依存関係を最小限に保つ</strong>ことで、バンドルサイズを削減できます。
                     shadcn/ui は必要なコンポーネントだけを追加できるため、この点で有利です。
@@ -189,9 +275,12 @@ const LazyDialog = dynamic(() => import("@/components/ui/dialog"), {
       
       <div className="flex justify-center mt-10">
         <Link href="/" className="inline-flex items-center gap-2 text-primary hover:underline">
-          <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
-            <path strokeLinecap="round" strokeLinejoin="round" d="M10 19l-7-7m0 0l7-7m-7 7h18" />
-          </svg>
+          <Icon
+            icon={ArrowLeft}
+            className="h-4 w-4"
+            animateOnHover
+            label="戻る"
+          />
           学習ガイドトップへ戻る
         </Link>
       </div>

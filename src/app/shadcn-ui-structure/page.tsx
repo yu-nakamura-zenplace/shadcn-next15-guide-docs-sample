@@ -14,14 +14,40 @@ import {
   DialogTitle,
   DialogTrigger,
 } from "@/components/ui/dialog";
+import { 
+  ArrowLeft, 
+  Home, 
+  Layers, 
+  Paintbrush, 
+  Code2, 
+  ListChecks, 
+  AlertTriangle,
+  Plus,
+  Check
+} from "lucide-react";
+import { Icon } from "@/components/ui/icon";
 
 export default function ShadcnUiStructurePage() {
   return (
     <main className="container mx-auto py-8 px-4 max-w-4xl">
       <div className="flex justify-between items-center mb-8">
-        <h1 className="text-3xl font-bold">shadcn/ui のコンポーネント設計思想</h1>
+        <h1 className="text-3xl font-bold flex items-center">
+          <Icon
+            icon={Layers}
+            className="h-7 w-7 mr-2 text-primary"
+            animation="none"
+            label="コンポーネント構造"
+          />
+          shadcn/ui のコンポーネント設計思想
+        </h1>
         <div className="flex items-center gap-4">
-          <Link href="/" className="text-sm font-medium hover:underline">
+          <Link href="/" className="text-sm font-medium hover:underline flex items-center">
+            <Icon
+              icon={Home}
+              className="h-4 w-4 mr-1 text-slate-500"
+              animateOnHover
+              label="ホーム"
+            />
             ← ホームに戻る
           </Link>
           <ThemeToggle />
@@ -40,13 +66,26 @@ export default function ShadcnUiStructurePage() {
       <section className="mb-10">
         <div className="flex items-center gap-3 mb-4">
           <div className="bg-primary h-8 w-1 rounded-full"></div>
+          <Icon
+            icon={Layers}
+            className="h-6 w-6 text-primary"
+            animation="none"
+            label="構造とスタイル"
+          />
           <h2 className="text-2xl font-semibold">構造とスタイルの分離の概念</h2>
         </div>
         
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
           <Card className="border border-slate-200 dark:border-slate-800 overflow-hidden">
             <div className="bg-slate-100 dark:bg-slate-800 p-3 border-b border-slate-200 dark:border-slate-700">
-              <h3 className="font-medium">構造 (Structure)</h3>
+              <h3 className="font-medium flex items-center">
+                <Icon
+                  icon={Code2}
+                  className="h-4 w-4 mr-1 text-slate-700 dark:text-slate-300"
+                  label="構造"
+                />
+                構造 (Structure)
+              </h3>
             </div>
             <CardContent className="pt-4">
               <ul className="list-disc pl-5 space-y-3 text-sm">
@@ -60,7 +99,14 @@ export default function ShadcnUiStructurePage() {
           
           <Card className="border border-slate-200 dark:border-slate-800 overflow-hidden">
             <div className="bg-slate-100 dark:bg-slate-800 p-3 border-b border-slate-200 dark:border-slate-700">
-              <h3 className="font-medium">スタイル (Style)</h3>
+              <h3 className="font-medium flex items-center">
+                <Icon
+                  icon={Paintbrush}
+                  className="h-4 w-4 mr-1 text-slate-700 dark:text-slate-300"
+                  label="スタイル"
+                />
+                スタイル (Style)
+              </h3>
             </div>
             <CardContent className="pt-4">
               <ul className="list-disc pl-5 space-y-3 text-sm">
@@ -77,6 +123,12 @@ export default function ShadcnUiStructurePage() {
       <section className="mb-10">
         <div className="flex items-center gap-3 mb-4">
           <div className="bg-primary h-8 w-1 rounded-full"></div>
+          <Icon
+            icon={Code2}
+            className="h-6 w-6 text-primary"
+            animation="none"
+            label="コンポーネント例"
+          />
           <h2 className="text-2xl font-semibold">具体的なコンポーネントの例</h2>
         </div>
 
@@ -84,7 +136,14 @@ export default function ShadcnUiStructurePage() {
           {/* Button コンポーネントの例 */}
           <Card className="border border-slate-200 dark:border-slate-800">
             <CardContent className="pt-6">
-              <h3 className="text-xl font-semibold mb-4">Button コンポーネント</h3>
+              <h3 className="text-xl font-semibold mb-4 flex items-center">
+                <Icon
+                  icon={Plus}
+                  className="h-5 w-5 mr-1 text-slate-500"
+                  label="ボタン"
+                />
+                Button コンポーネント
+              </h3>
               <div className="space-y-4">
                 <p className="text-sm">
                   <code className="bg-slate-100 dark:bg-slate-800 px-1.5 py-0.5 rounded text-xs">Button</code> コンポーネントは、
@@ -104,9 +163,11 @@ export default function ShadcnUiStructurePage() {
                       大きなボタン
                     </Button>
                     <Button variant="outline" size="icon">
-                      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="w-4 h-4">
-                        <path fillRule="evenodd" d="M12 2.25c-5.385 0-9.75 4.365-9.75 9.75s4.365 9.75 9.75 9.75 9.75-4.365 9.75-9.75S17.385 2.25 12 2.25zm.53 5.47a.75.75 0 00-1.06 0l-3 3a.75.75 0 101.06 1.06l1.72-1.72v5.69a.75.75 0 001.5 0v-5.69l1.72 1.72a.75.75 0 101.06-1.06l-3-3z" clipRule="evenodd" />
-                      </svg>
+                      <Icon 
+                        icon={ArrowLeft} 
+                        className="h-4 w-4" 
+                        label="戻る" 
+                      />
                     </Button>
                   </div>
                 </div>
@@ -117,7 +178,14 @@ export default function ShadcnUiStructurePage() {
           {/* Dialog コンポーネントの例 */}
           <Card className="border border-slate-200 dark:border-slate-800">
             <CardContent className="pt-6">
-              <h3 className="text-xl font-semibold mb-4">Dialog コンポーネント</h3>
+              <h3 className="text-xl font-semibold mb-4 flex items-center">
+                <Icon
+                  icon={Plus}
+                  className="h-5 w-5 mr-1 text-slate-500"
+                  label="ダイアログ"
+                />
+                Dialog コンポーネント
+              </h3>
               <div className="space-y-4">
                 <p className="text-sm">
                   <code className="bg-slate-100 dark:bg-slate-800 px-1.5 py-0.5 rounded text-xs">Dialog</code> コンポーネントは、
@@ -153,6 +221,12 @@ export default function ShadcnUiStructurePage() {
       <section className="mb-10">
         <div className="flex items-center gap-3 mb-4">
           <div className="bg-primary h-8 w-1 rounded-full"></div>
+          <Icon
+            icon={Check}
+            className="h-6 w-6 text-primary"
+            animation="none"
+            label="利点"
+          />
           <h2 className="text-2xl font-semibold">この設計思想の利点</h2>
         </div>
         
@@ -184,35 +258,69 @@ export default function ShadcnUiStructurePage() {
       <section className="mb-10">
         <div className="flex items-center gap-3 mb-4">
           <div className="bg-primary h-8 w-1 rounded-full"></div>
+          <Icon
+            icon={AlertTriangle}
+            className="h-6 w-6 text-primary"
+            animation="none"
+            label="課題"
+          />
           <h2 className="text-2xl font-semibold">潜在的な課題</h2>
         </div>
         
         <Card className="border border-slate-200 dark:border-slate-800">
           <CardContent className="pt-6">
             <div className="space-y-4">
-              <div className="p-4  rounded-lg">
-                <h3 className="font-medium mb-2">1. 初期設定の必要性</h3>
+              <div className="p-4 rounded-lg">
+                <h3 className="font-medium mb-2 flex items-center">
+                  <Icon
+                    icon={ListChecks}
+                    className="h-4 w-4 mr-1 text-slate-500"
+                    label="初期設定"
+                  />
+                  1. 初期設定の必要性
+                </h3>
                 <p className="text-sm">
                   インストール後に初期化やコンポーネントの追加を個別に行う必要があります。
                 </p>
               </div>
               
-              <div className="p-4  rounded-lg">
-                <h3 className="font-medium mb-2">2. Tailwind CSSの知識</h3>
+              <div className="p-4 rounded-lg">
+                <h3 className="font-medium mb-2 flex items-center">
+                  <Icon
+                    icon={Code2}
+                    className="h-4 w-4 mr-1 text-slate-500"
+                    label="Tailwind知識"
+                  />
+                  2. Tailwind CSSの知識
+                </h3>
                 <p className="text-sm">
                   スタイリングを自由に行うためには、Tailwind CSSのユーティリティクラスに関する知識が必要です。
                 </p>
               </div>
               
-              <div className="p-4  rounded-lg">
-                <h3 className="font-medium mb-2">3. 大規模アプリケーションにおける管理</h3>
+              <div className="p-4 rounded-lg">
+                <h3 className="font-medium mb-2 flex items-center">
+                  <Icon
+                    icon={Layers}
+                    className="h-4 w-4 mr-1 text-slate-500"
+                    label="管理"
+                  />
+                  3. 大規模アプリケーションにおける管理
+                </h3>
                 <p className="text-sm">
                   多くのコンポーネントをカスタマイズする場合、スタイルの一貫性を保つための設計やルール作りが重要になります。
                 </p>
               </div>
               
-              <div className="p-4  rounded-lg">
-                <h3 className="font-medium mb-2">4. コンポーネントの組み合わせ</h3>
+              <div className="p-4 rounded-lg">
+                <h3 className="font-medium mb-2 flex items-center">
+                  <Icon
+                    icon={Code2}
+                    className="h-4 w-4 mr-1 text-slate-500"
+                    label="組み合わせ"
+                  />
+                  4. コンポーネントの組み合わせ
+                </h3>
                 <p className="text-sm">
                   複数のプリミティブなコンポーネントを組み合わせて目的のUIを実現する必要がある場合があります。
                 </p>
@@ -234,9 +342,12 @@ export default function ShadcnUiStructurePage() {
       
       <div className="flex justify-center mt-10">
         <Link href="/" className="inline-flex items-center gap-2 text-primary hover:underline">
-          <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
-            <path strokeLinecap="round" strokeLinejoin="round" d="M10 19l-7-7m0 0l7-7m-7 7h18" />
-          </svg>
+          <Icon
+            icon={ArrowLeft}
+            className="h-4 w-4"
+            animateOnHover
+            label="戻る"
+          />
           学習ガイドトップへ戻る
         </Link>
       </div>

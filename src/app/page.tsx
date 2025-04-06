@@ -4,6 +4,21 @@ import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { ThemeToggle } from "@/components/theme-toggle";
 import Link from "next/link";
+import { 
+  Info, 
+  HelpCircle, 
+  PencilLine, 
+  BookOpen, 
+  ExternalLink, 
+  Tag, 
+  MessageSquare, 
+  ListTodo,
+  ArrowRight,
+  ChevronRight,
+  Sparkles
+} from "lucide-react";
+import { Button } from "@/components/ui/button";
+import { Icon } from "@/components/ui/icon";
 
 interface Quiz {
   question: string;
@@ -151,10 +166,70 @@ export default function Page() {
     <main className="container mx-auto py-8 px-4 max-w-6xl">
       <div className="flex justify-between items-center mb-8">
         <div>
-          <h1 className="text-3xl font-bold mb-2">shadcn/ui 学習ガイド</h1>
+          <h1 className="text-3xl font-bold mb-2 flex items-center">
+            <Icon 
+              icon={Sparkles} 
+              className="h-7 w-7 mr-2 text-primary" 
+              animation="pulse"
+              label="輝くアイコン" 
+            />
+            shadcn/ui 学習ガイド
+          </h1>
           <p className="text-slate-500 dark:text-slate-400">モダンなUIライブラリを活用するための包括的なガイド</p>
         </div>
         <ThemeToggle />
+      </div>
+
+      {/* ナビゲーション */}
+      <div className="flex flex-wrap gap-2 mb-8">
+        <Button variant="outline" size="sm" className="group" asChild>
+          <a href="#overview">
+            <Icon 
+              icon={Info} 
+              className="h-4 w-4 mr-1 text-slate-500 group-hover:text-primary" 
+              animateOnHover
+              label="概要" 
+            />
+            概要
+            <ChevronRight className="h-3 w-3 ml-1 opacity-50" />
+          </a>
+        </Button>
+        <Button variant="outline" size="sm" className="group" asChild>
+          <a href="#quiz">
+            <Icon 
+              icon={HelpCircle} 
+              className="h-4 w-4 mr-1 text-slate-500 group-hover:text-primary" 
+              animateOnHover
+              label="クイズ" 
+            />
+            クイズ
+            <ChevronRight className="h-3 w-3 ml-1 opacity-50" />
+          </a>
+        </Button>
+        <Button variant="outline" size="sm" className="group" asChild>
+          <a href="#essay">
+            <Icon 
+              icon={PencilLine} 
+              className="h-4 w-4 mr-1 text-slate-500 group-hover:text-primary" 
+              animateOnHover 
+              label="論述問題"
+            />
+            論述問題
+            <ChevronRight className="h-3 w-3 ml-1 opacity-50" />
+          </a>
+        </Button>
+        <Button variant="outline" size="sm" className="group" asChild>
+          <a href="#glossary">
+            <Icon 
+              icon={BookOpen} 
+              className="h-4 w-4 mr-1 text-slate-500 group-hover:text-primary" 
+              animateOnHover
+              label="用語集" 
+            />
+            用語集
+            <ChevronRight className="h-3 w-3 ml-1 opacity-50" />
+          </a>
+        </Button>
       </div>
       
       {/* イントロダクション */}
@@ -169,9 +244,15 @@ export default function Page() {
       </Card>
 
       {/* ShadcnUI概要のセクション */}
-      <section className="mb-12">
+      <section id="overview" className="mb-12 scroll-mt-16">
         <div className="flex items-center gap-3 mb-6">
           <div className="bg-primary h-8 w-1 rounded-full"></div>
+          <Icon 
+            icon={Info} 
+            className="h-6 w-6 text-primary" 
+            animation="none"
+            label="概要情報"
+          />
           <h2 className="text-2xl font-semibold">ShadcnUI概要</h2>
         </div>
         <Card className="border border-slate-200 dark:border-slate-800 shadow-sm">
@@ -179,7 +260,6 @@ export default function Page() {
             <CardTitle>ShadcnUI概要</CardTitle>
           </CardHeader>
           <CardContent className="pt-2 space-y-6">
-
             <div className="prose dark:prose-invert max-w-none">
               <p>
                 shadcn/ui は、<strong>美しくデザインされた、アクセス可能な React UI コンポーネントのセット</strong>であり、
@@ -204,9 +284,15 @@ export default function Page() {
       </section>
       
       {/* クイズセクション */}
-      <section className="mb-12">
+      <section id="quiz" className="mb-12 scroll-mt-16">
         <div className="flex items-center gap-3 mb-6">
           <div className="bg-primary h-8 w-1 rounded-full"></div>
+          <Icon 
+            icon={HelpCircle} 
+            className="h-6 w-6 text-primary" 
+            animation="none"
+            label="クイズ"
+          />
           <h2 className="text-2xl font-semibold">クイズ (短答形式)</h2>
         </div>
         
@@ -222,11 +308,16 @@ export default function Page() {
                   <div className="bg-slate-100 dark:bg-slate-800 h-6 w-6 rounded-full flex items-center justify-center flex-shrink-0">
                     <span className="text-xs">{index + 1}</span>
                   </div>
+                  <Icon 
+                    icon={MessageSquare} 
+                    className="h-4 w-4 text-slate-500" 
+                    label="質問" 
+                  />
                   <span>{quiz.question}</span>
                 </div>
               </AccordionTrigger>
               <AccordionContent>
-                <div className="p-5  border-t border-slate-200 dark:border-slate-700">
+                <div className="p-5 border-t border-slate-200 dark:border-slate-700">
                   {quiz.answer}
                 </div>
               </AccordionContent>
@@ -236,15 +327,28 @@ export default function Page() {
       </section>
       
       {/* 論述問題セクション */}
-      <section className="mb-12">
+      <section id="essay" className="mb-12 scroll-mt-16">
         <div className="flex items-center gap-3 mb-6">
           <div className="bg-primary h-8 w-1 rounded-full"></div>
+          <Icon 
+            icon={PencilLine} 
+            className="h-6 w-6 text-primary" 
+            animation="none"
+            label="論述問題"
+          />
           <h2 className="text-2xl font-semibold">論述問題</h2>
         </div>
         
         <Card className="border border-slate-200 dark:border-slate-800 shadow-sm">
           <CardHeader className=" border-b border-slate-200 dark:border-slate-700">
-            <CardTitle>論述式の問題</CardTitle>
+            <CardTitle className="flex items-center">
+              <Icon 
+                icon={ListTodo} 
+                className="h-5 w-5 mr-2 text-slate-500" 
+                label="論述リスト" 
+              />
+              論述式の問題
+            </CardTitle>
           </CardHeader>
           <CardContent className="pt-6">
             <ul className="space-y-4">
@@ -255,24 +359,54 @@ export default function Page() {
                       <span className="text-xs">{index + 1}</span>
                     </div>
                     {index === 4 ? (
-                      <Link href="/shadcn-ui-customize" className="font-medium hover:underline text-blue-600 dark:text-blue-400">
+                      <Link href="/shadcn-ui-customize" className="font-medium hover:underline text-blue-600 dark:text-blue-400 flex items-center">
                         {question.question}
+                        <Icon 
+                          icon={ExternalLink} 
+                          className="h-4 w-4 ml-1" 
+                          animateOnHover
+                          label="外部リンク" 
+                        />
                       </Link>
                     ) : index === 3 ? (
-                      <Link href="/shadcn-ui-performance" className="font-medium hover:underline text-blue-600 dark:text-blue-400">
+                      <Link href="/shadcn-ui-performance" className="font-medium hover:underline text-blue-600 dark:text-blue-400 flex items-center">
                         {question.question}
+                        <Icon 
+                          icon={ExternalLink} 
+                          className="h-4 w-4 ml-1" 
+                          animateOnHover
+                          label="外部リンク" 
+                        />
                       </Link>
                     ) : index === 2 ? (
-                      <Link href="/shadcn-ui-tailwind" className="font-medium hover:underline text-blue-600 dark:text-blue-400">
+                      <Link href="/shadcn-ui-tailwind" className="font-medium hover:underline text-blue-600 dark:text-blue-400 flex items-center">
                         {question.question}
+                        <Icon 
+                          icon={ExternalLink} 
+                          className="h-4 w-4 ml-1" 
+                          animateOnHover
+                          label="外部リンク" 
+                        />
                       </Link>
                     ) : index === 1 ? (
-                      <Link href="/shadcn-ui-structure" className="font-medium hover:underline text-blue-600 dark:text-blue-400">
+                      <Link href="/shadcn-ui-structure" className="font-medium hover:underline text-blue-600 dark:text-blue-400 flex items-center">
                         {question.question}
+                        <Icon 
+                          icon={ExternalLink} 
+                          className="h-4 w-4 ml-1" 
+                          animateOnHover
+                          label="外部リンク" 
+                        />
                       </Link>
                     ) : index === 0 ? (
-                      <Link href="/shadcn-ui-setup" className="font-medium hover:underline text-blue-600 dark:text-blue-400">
+                      <Link href="/shadcn-ui-setup" className="font-medium hover:underline text-blue-600 dark:text-blue-400 flex items-center">
                         {question.question}
+                        <Icon 
+                          icon={ExternalLink} 
+                          className="h-4 w-4 ml-1" 
+                          animateOnHover
+                          label="外部リンク" 
+                        />
                       </Link>
                     ) : (
                       <p className="font-medium">{question.question}</p>
@@ -286,9 +420,15 @@ export default function Page() {
       </section>
       
       {/* 用語集セクション */}
-      <section>
+      <section id="glossary" className="scroll-mt-16">
         <div className="flex items-center gap-3 mb-6">
           <div className="bg-primary h-8 w-1 rounded-full"></div>
+          <Icon 
+            icon={BookOpen} 
+            className="h-6 w-6 text-primary" 
+            animation="none"
+            label="用語集"
+          />
           <h2 className="text-2xl font-semibold">用語集</h2>
         </div>
         
@@ -296,7 +436,14 @@ export default function Page() {
           {glossaryTerms.map((term, index) => (
             <Card key={index} className="border border-slate-200 dark:border-slate-800 overflow-hidden shadow-sm hover:shadow-md transition-shadow">
               <CardHeader className=" border-b border-slate-200 dark:border-slate-700 pt-3 pb-3">
-                <CardTitle className="text-lg">{term.term}</CardTitle>
+                <CardTitle className="text-lg flex items-center">
+                  <Icon 
+                    icon={Tag} 
+                    className="h-4 w-4 mr-2 text-slate-500" 
+                    label="タグ" 
+                  />
+                  {term.term}
+                </CardTitle>
               </CardHeader>
               <CardContent className="pt-4">
                 <p className="text-sm text-slate-700 dark:text-slate-300">{term.definition}</p>
@@ -305,6 +452,25 @@ export default function Page() {
           ))}
         </div>
       </section>
+      
+      {/* ページトップへ戻るボタン */}
+      <div className="fixed bottom-6 right-6">
+        <Button
+          variant="outline"
+          size="icon"
+          className="rounded-full shadow-md bg-background/80 backdrop-blur group"
+          asChild
+        >
+          <a href="#" aria-label="ページトップへ戻る">
+            <Icon 
+              icon={ArrowRight} 
+              className="h-4 w-4 rotate-[-90deg]" 
+              animateOnHover
+              label="トップへ戻る"
+            />
+          </a>
+        </Button>
+      </div>
       
       {/* フッター */}
       <footer className="mt-16 pt-8 border-t border-slate-200 dark:border-slate-800 text-center text-sm text-slate-500 dark:text-slate-400">
