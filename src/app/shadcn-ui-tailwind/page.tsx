@@ -17,7 +17,6 @@ import {
   Repeat,
   Accessibility,
   CodepenIcon,
-  Check
 } from "lucide-react";
 import { Icon } from "@/components/ui/icon";
 
