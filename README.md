@@ -1,36 +1,64 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Shadcn UI 学習サイト
 
-## Getting Started
+このリポジトリは Shadcn UI を学習するための Next.js プロジェクトです。
 
-First, run the development server:
+## ✨ 目的
+
+*   Shadcn UI の基本的な使い方を理解する
+*   様々なコンポーネントの実装方法を学ぶ
+*   カスタマイズ方法を探る
+
+## 🚀 セットアップ
+
+1.  **リポジトリをクローン:**
+    ```bash
+    git clone <リポジトリURL> # ここにご自身のリポジトリURLを記載してください
+    cd <リポジトリ名>
+    ```
+2.  **依存関係をインストール:**
+    ```bash
+    npm install
+    # または
+    yarn install
+    # または
+    pnpm install
+    ```
+3.  **開発サーバーを起動:**
+    ```bash
+    npm run dev
+    # または
+    yarn dev
+    # または
+    pnpm dev
+    ```
+    ブラウザで `http://localhost:3000` を開きます。
+
+## 🔧 Shadcn UI コンポーネントの追加
+
+Shadcn UI CLI を使用して新しいコンポーネントを追加できます。
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+npx shadcn-ui@latest add [コンポーネント名]
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+例: ボタンコンポーネントを追加する場合
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+```bash
+npx shadcn-ui@latest add button
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+追加されたコンポーネントは `src/components/ui` ディレクトリ（設定によって異なる場合があります）に配置されます。
 
-## Learn More
+## 📄 使い方
 
-To learn more about Next.js, take a look at the following resources:
+*   `src/app` ディレクトリ内の各ページでコンポーネントの使用例を確認できます。（これから作成していく想定です）
+*   `src/components/ui` ディレクトリで各コンポーネントのソースコードを確認できます。
+*   自由にコードを変更し、動作を確認しながら学習を進めてください。
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## 🤝 コントリビューション
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+改善提案やバグ報告は Issue または Pull Request でお願いします。（必要に応じて変更してください）
 
-## Deploy on Vercel
+## 📜 ライセンス
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+[ライセンスの種類を記載] (例: MIT License)
