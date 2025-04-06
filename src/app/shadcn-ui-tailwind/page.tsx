@@ -78,7 +78,7 @@ export default function ShadcnUiTailwindPage() {
               shadcn/ui と Tailwind CSS を組み合わせることで、以下のような恩恵を受けられます：
             </p>
             <div className="space-y-4">
-              <div className="p-4 bg-slate-50 dark:bg-slate-800/50 rounded-lg">
+              <div className="p-4  rounded-lg">
                 <h3 className="font-medium mb-2">1. 迅速なUI構築</h3>
                 <p className="text-sm">
                   shadcn/ui が提供する実務品質の UI コンポーネントと、Tailwind CSS のユーティリティクラスを組み合わせることで、<strong>コーディング量を減らし、迅速に UI を構築</strong> できます。
@@ -86,7 +86,7 @@ export default function ShadcnUiTailwindPage() {
                 </p>
               </div>
               
-              <div className="p-4 bg-slate-50 dark:bg-slate-800/50 rounded-lg">
+              <div className="p-4  rounded-lg">
                 <h3 className="font-medium mb-2">2. 高いカスタマイズ性</h3>
                 <p className="text-sm">
                   shadcn/ui のコンポーネントは Tailwind CSS をベースにスタイリングされているため、<strong>Tailwind CSS のユーティリティクラスを className プロパティを通じて自由に追加・変更</strong> できます。
@@ -94,7 +94,7 @@ export default function ShadcnUiTailwindPage() {
                 </p>
               </div>
               
-              <div className="p-4 bg-slate-50 dark:bg-slate-800/50 rounded-lg">
+              <div className="p-4  rounded-lg">
                 <h3 className="font-medium mb-2">3. デザインの一貫性</h3>
                 <p className="text-sm">
                   Tailwind CSS のユーティリティクラスを使用することで、<strong>アプリケーション全体でデザインの一貫性を保ちやすく</strong> なります。
@@ -102,7 +102,7 @@ export default function ShadcnUiTailwindPage() {
                 </p>
               </div>
               
-              <div className="p-4 bg-slate-50 dark:bg-slate-800/50 rounded-lg">
+              <div className="p-4  rounded-lg">
                 <h3 className="font-medium mb-2">4. アクセシビリティの確保</h3>
                 <p className="text-sm">
                   shadcn/ui は Radix UI をベースにしているため、<strong>アクセシビリティ（a11y）が考慮されたコンポーネント</strong> を利用できます。

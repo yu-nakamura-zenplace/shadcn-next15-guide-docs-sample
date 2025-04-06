@@ -190,28 +190,28 @@ export default function ShadcnUiStructurePage() {
         <Card className="border border-slate-200 dark:border-slate-800">
           <CardContent className="pt-6">
             <div className="space-y-4">
-              <div className="p-4 bg-slate-50 dark:bg-slate-800/50 rounded-lg">
+              <div className="p-4  rounded-lg">
                 <h3 className="font-medium mb-2">1. 初期設定の必要性</h3>
                 <p className="text-sm">
                   インストール後に初期化やコンポーネントの追加を個別に行う必要があります。
                 </p>
               </div>
               
-              <div className="p-4 bg-slate-50 dark:bg-slate-800/50 rounded-lg">
+              <div className="p-4  rounded-lg">
                 <h3 className="font-medium mb-2">2. Tailwind CSSの知識</h3>
                 <p className="text-sm">
                   スタイリングを自由に行うためには、Tailwind CSSのユーティリティクラスに関する知識が必要です。
                 </p>
               </div>
               
-              <div className="p-4 bg-slate-50 dark:bg-slate-800/50 rounded-lg">
+              <div className="p-4  rounded-lg">
                 <h3 className="font-medium mb-2">3. 大規模アプリケーションにおける管理</h3>
                 <p className="text-sm">
                   多くのコンポーネントをカスタマイズする場合、スタイルの一貫性を保つための設計やルール作りが重要になります。
                 </p>
               </div>
               
-              <div className="p-4 bg-slate-50 dark:bg-slate-800/50 rounded-lg">
+              <div className="p-4  rounded-lg">
                 <h3 className="font-medium mb-2">4. コンポーネントの組み合わせ</h3>
                 <p className="text-sm">
                   複数のプリミティブなコンポーネントを組み合わせて目的のUIを実現する必要がある場合があります。

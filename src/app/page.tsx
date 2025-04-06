@@ -167,6 +167,41 @@ export default function Page() {
           </p>
         </CardContent>
       </Card>
+
+      {/* ShadcnUI概要のセクション */}
+      <section className="mb-12">
+        <div className="flex items-center gap-3 mb-6">
+          <div className="bg-primary h-8 w-1 rounded-full"></div>
+          <h2 className="text-2xl font-semibold">ShadcnUI概要</h2>
+        </div>
+        <Card className="border border-slate-200 dark:border-slate-800 shadow-sm">
+          <CardHeader className=" border-b border-slate-200 dark:border-slate-700">
+            <CardTitle>ShadcnUI概要</CardTitle>
+          </CardHeader>
+          <CardContent className="pt-2 space-y-6">
+
+            <div className="prose dark:prose-invert max-w-none">
+              <p>
+                shadcn/ui は、<strong>美しくデザインされた、アクセス可能な React UI コンポーネントのセット</strong>であり、
+                <strong>Tailwind CSS</strong> と <strong>Radix UI</strong> を基盤としています。
+                npm パッケージとして配布されず、<strong>必要なコンポーネントのソースコードを CLI 経由でプロジェクトに直接コピーして使用</strong>する点が特徴です。
+                これにより、コンポーネントの<strong>カスタマイズが容易</strong>になり、プロジェクトの<strong>依存関係にも影響を与えません</strong>。
+              </p>
+
+              <div className="mt-6">
+                <h3 className="text-lg font-semibold mb-3">今後の発展と最新技術への対応</h3>
+                <p>
+                  プロジェクトの今後の発展としては、ソースから<strong>Tailwind v4</strong> と <strong>React 19</strong> への<strong>フルサポート</strong>が
+                  積極的に進められていることが伺えます。CLI で Tailwind v4 を使用したプロジェクトの初期化が可能になり、
+                  コンポーネントも最新技術に対応するようにアップデートされています。また、非推奨となるコンポーネントの代替として
+                  新しいライブラリ（例: `toast` コンポーネントの代わりに `sonner` を推奨）が導入されるなど、
+                  <strong>より良い UI および開発体験の提供</strong>を目指していると考えられます。
+                </p>
+              </div>
+            </div>
+          </CardContent>
+        </Card>
+      </section>
       
       {/* クイズセクション */}
       <section className="mb-12">
@@ -191,7 +226,7 @@ export default function Page() {
                 </div>
               </AccordionTrigger>
               <AccordionContent>
-                <div className="p-5 bg-slate-50 dark:bg-slate-800/50 border-t border-slate-200 dark:border-slate-700">
+                <div className="p-5  border-t border-slate-200 dark:border-slate-700">
                   {quiz.answer}
                 </div>
               </AccordionContent>
@@ -208,7 +243,7 @@ export default function Page() {
         </div>
         
         <Card className="border border-slate-200 dark:border-slate-800 shadow-sm">
-          <CardHeader className="bg-slate-50 dark:bg-slate-800/50 border-b border-slate-200 dark:border-slate-700">
+          <CardHeader className=" border-b border-slate-200 dark:border-slate-700">
             <CardTitle>論述式の問題</CardTitle>
           </CardHeader>
           <CardContent className="pt-6">
@@ -235,6 +270,10 @@ export default function Page() {
                       <Link href="/shadcn-ui-structure" className="font-medium hover:underline text-blue-600 dark:text-blue-400">
                         {question.question}
                       </Link>
+                    ) : index === 0 ? (
+                      <Link href="/shadcn-ui-setup" className="font-medium hover:underline text-blue-600 dark:text-blue-400">
+                        {question.question}
+                      </Link>
                     ) : (
                       <p className="font-medium">{question.question}</p>
                     )}
@@ -256,7 +295,7 @@ export default function Page() {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
           {glossaryTerms.map((term, index) => (
             <Card key={index} className="border border-slate-200 dark:border-slate-800 overflow-hidden shadow-sm hover:shadow-md transition-shadow">
-              <CardHeader className="bg-slate-50 dark:bg-slate-800/50 border-b border-slate-200 dark:border-slate-700 pt-3 pb-3">
+              <CardHeader className=" border-b border-slate-200 dark:border-slate-700 pt-3 pb-3">
                 <CardTitle className="text-lg">{term.term}</CardTitle>
               </CardHeader>
               <CardContent className="pt-4">
